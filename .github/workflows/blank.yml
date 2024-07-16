@@ -23,9 +23,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install jupyter pandas gspread gspread-dataframe oauth2client
 
+      - name: Debug - List files
+        run: ls -la
+
+      - name: Set file permissions
+        run: chmod +r Git_Bouygues_V1.2.ipynb
+
       - name: Run Colab Notebook
         run: |
-          jupyter nbconvert --to notebook --execute Git_Bouygues_V1.2.ipynb --output executed_notebook.ipynb
+          jupyter nbconvert --to notebook --execute ./Git_Bouygues_V1.2.ipynb --output executed_notebook.ipynb
 
       - name: List files after execution
         run: |
@@ -36,4 +42,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: output-csv
-          path: Orange-Bench-*.csv  # Utilisez un joker pour matcher tous les fichiers générés
+          path: Bouygues-Bench-*.csv  # Utilisez un joker pour matcher tous les fichiers générés
+
