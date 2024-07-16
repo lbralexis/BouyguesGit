@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Colab Notebook
         run: |
-          jupyter nbconvert --to notebook --execute ./Git_Bouygues_V1.2.ipynb --output executed_notebook.ipynb
+          jupyter nbconvert --to notebook --execute Git_Bouygues V1.2.ipynb --output executed_notebook.ipynb
 
       - name: List files after execution
         run: |
