@@ -27,7 +27,7 @@ jobs:
         run: ls -la
 
       - name: Set file permissions
-        run: chmod +r Git_Bouygues_V1.2.ipynb
+        run: chmod +r Git_Bouygues.ipynb
 
       - name: Run Colab Notebook
         run: |
