@@ -65,6 +65,6 @@ jobs:
           to: alexis.laboureyras@sfr.com
               
           from: ${{ secrets.GMAIL_USERNAME }}
-          attachments: Orange-Bouygues-*.csv
+          attachments: Bench-Bouygues-*.csv
           username: ${{ secrets.GMAIL_USERNAME }}
           password: ${{ secrets.GMAIL_APP_PASSWORD }}
