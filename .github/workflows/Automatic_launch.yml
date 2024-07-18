@@ -46,7 +46,7 @@ jobs:
 
       - name: Set email subject with date
         id: set-subject
-        run: echo "SUBJECT=Bench Orange du $(date +'%d/%m/%Y')" >> $GITHUB_ENV
+        run: echo "SUBJECT=Bench Bouygues du $(date +'%d/%m/%Y')" >> $GITHUB_ENV
 
 
       - name: Send email with artifact
@@ -65,6 +65,6 @@ jobs:
           to: alexis.laboureyras@sfr.com
               
           from: ${{ secrets.GMAIL_USERNAME }}
-          attachments: Orange-Bench-*.csv
+          attachments: Orange-Bouygues-*.csv
           username: ${{ secrets.GMAIL_USERNAME }}
           password: ${{ secrets.GMAIL_APP_PASSWORD }}
