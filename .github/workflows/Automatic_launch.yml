@@ -48,6 +48,9 @@ jobs:
         id: set-subject
         run: echo "SUBJECT=Bench Bouygues du $(date +'%d/%m/%Y')" >> $GITHUB_ENV
 
+      - name: Find CSV file
+        id: find_csv
+        run: echo "CSV_FILE=$(ls Bouygues-Bench-*.csv)" >> $GITHUB_ENV
 
       - name: Send email with artifact
         uses: dawidd6/action-send-mail@v3
@@ -55,7 +58,7 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 587
           subject: ${{ env.SUBJECT }}
-          body:
+          body: |
             Bonjour à tous,
 
             Veuillez trouver ci-joint les PVMC des différents forfaits Bouygues.
@@ -63,8 +66,7 @@ jobs:
             Cordialement,
             Alexis
           to: alexis.laboureyras@sfr.com
-              
           from: ${{ secrets.GMAIL_USERNAME }}
-          attachments: Bench-Bouygues-*.csv
+          attachments: ${{ env.CSV_FILE }}
           username: ${{ secrets.GMAIL_USERNAME }}
           password: ${{ secrets.GMAIL_APP_PASSWORD }}
