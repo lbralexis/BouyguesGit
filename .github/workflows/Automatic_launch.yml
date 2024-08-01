@@ -65,7 +65,9 @@ jobs:
 
             Cordialement,
             Alexis
-          to: alexis.laboureyras@sfr.com
+          to: alexis.laboureyras@sfr.com,
+              vincent.heritier@sfr.com
+              
           from: ${{ secrets.GMAIL_USERNAME }}
           attachments: ${{ env.CSV_FILE }}
           username: ${{ secrets.GMAIL_USERNAME }}
