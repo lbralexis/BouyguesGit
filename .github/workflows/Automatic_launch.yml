@@ -65,7 +65,7 @@ jobs:
 
             Cordialement,
             Alexis
-          to: alexis.laboureyras@sfr.com,
+          to: 
               
           from: ${{ secrets.GMAIL_USERNAME }}
           attachments: ${{ env.CSV_FILE }}
